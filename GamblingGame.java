@@ -57,3 +57,32 @@ public class GamblingGame {
         winLoose(r);
     }
 }
+
+    //After 20 days of playing every day would like to know the total amount won or lost.
+    void monthGame () {
+        for (int day = 0; day < 20; day++) {
+            System.out.println("Day " + (day + 1) + " Game starts!");// Beginning of the game
+            winLoose(day);
+            System.out.println("Game Ends for today!");// End of the game
+            System.out.println();
+        }
+    }
+    public static void main (String[]args){
+
+        System.out.println("Welcome to Gambling Simulation Problem.");
+
+        Random rand = new Random();
+        int j = rand.nextInt(2);
+        GamblingGame gmg = new GamblingGame();
+        gmg.monthGame();
+        System.out.println("Won days");
+        for (int i: winCountArr ) {
+            System.out.print(i + " ");
+        }
+        System.out.println("");
+        System.out.println("lost days");
+        for (int i: looseCountArr ) {
+            System.out.print(i + " ");
+        }
+    }
+}
